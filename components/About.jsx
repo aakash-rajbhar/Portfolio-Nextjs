@@ -2,7 +2,7 @@ import { FcGraduationCap } from 'react-icons/fc';
 import { FaSchool } from 'react-icons/fa';
 
 const AboutSection = () => (
-  <section id="about" className="mb-20">
+  <section id="about">
     <h2 className="text-white text-3xl font-medium mb-6">About Me</h2>
     <div className="space-y-4">
       <p className="text-gray-300 leading-relaxed">

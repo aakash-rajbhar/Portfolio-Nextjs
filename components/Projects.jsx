@@ -46,13 +46,6 @@ const ProjectsSection = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-white text-4xl font-medium">Projects</h2>
-        <a
-          href="#all-projects"
-          className="text-zinc-400 flex items-center hover:text-zinc-300 transition-all"
-        >
-          View All
-          <ArrowUpRight className="ml-1 h-5 w-5" />
-        </a>
       </div>
 
       {/* Project Cards Grid */}

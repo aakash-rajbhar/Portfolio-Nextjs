@@ -27,6 +27,7 @@ body {
 body::-webkit-scrollbar,
 main::-webkit-scrollbar {
   width: 2px;
+  border-radius: 10px;
 }
 
 body::-webkit-scrollbar-track,
