@@ -9,7 +9,7 @@ Check out the live version of my portfolio:
 
 ## 📸 Screenshots
 
-![Portfolio Screenshot](![alt text](/images/preview.png))
+![Portfolio Screenshot](public/images/preview.png)
 
 ## 📌 Features
 
