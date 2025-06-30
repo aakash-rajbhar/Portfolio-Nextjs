@@ -14,20 +14,22 @@ const MiscellaneousSection = () => {
         <div className="bg-neutral-800 px-4 py-8 rounded-lg flex flex-col  items-center gap-6">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Image
-              src="/images/theme-preview.png" // Replace with actual image path
+              src="/images/theme-preview.webp" // Replace with actual image path
               alt="VS Code Theme Preview"
               title="VS Code Theme Preview"
               width={600}
               height={250}
               className="w-full rounded-lg border border-neutral-700"
+              loading="eager"
             />
             <Image
-              src="/images/theme-extension.png"
+              src="/images/theme-extension.webp"
               alt="VS Code Theme Extension"
               title="VS Code Theme Extension"
               width={600}
               height={250}
               className="w-full rounded-lg border border-neutral-700"
+              loading="eager"
             />
           </div>
           <div className="text-gray-300">
