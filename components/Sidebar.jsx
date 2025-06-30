@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import Image from "next/image";
+import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 
 const Sidebar = ({ activeSection, setActiveSection, closeMenu }) => {
   const navItems = [
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'miscellaneous', label: 'Miscellaneous' },
-    { id: 'contact', label: 'Contact' },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "miscellaneous", label: "Miscellaneous" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -16,14 +16,14 @@ const Sidebar = ({ activeSection, setActiveSection, closeMenu }) => {
       <section className="flex flex-col items-start mb-8">
         <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-neutral-700">
           <Image
-            src="/images/profile-pic.png"
+            src="/images/profile-pic.webp"
             alt="Profile"
             width={60}
             height={60}
             className="w-full h-full object-cover"
           />
         </div>
-        <h1 className="text-white text-xl font-bold">Aakash Rajbhar</h1>
+        <h2 className="text-white text-xl font-bold">Aakash Rajbhar</h2>
         <p className="text-neutral-400">Full-Stack Developer</p>
       </section>
 
@@ -39,11 +39,11 @@ const Sidebar = ({ activeSection, setActiveSection, closeMenu }) => {
                 }}
                 className={`transition w-full text-left p-2 rounded-md uppercase ${
                   activeSection === item.id
-                    ? 'text-white font-medium bg-neutral-800'
-                    : 'hover:text-neutral-300 hover:bg-neutral-800'
+                    ? "text-white font-medium bg-neutral-800"
+                    : "hover:text-neutral-300 hover:bg-neutral-800"
                 }`}
                 aria-label={`Go to ${item.label} section`}
-                aria-current={activeSection === item.id ? 'page' : undefined}
+                aria-current={activeSection === item.id ? "page" : undefined}
               >
                 {item.label}
               </button>
@@ -60,18 +60,18 @@ const Sidebar = ({ activeSection, setActiveSection, closeMenu }) => {
         <div className="flex space-x-4">
           {[
             {
-              label: 'LinkedIn',
-              url: 'https://linkedin.com/in/aakash-rajbhar',
+              label: "LinkedIn",
+              url: "https://linkedin.com/in/aakash-rajbhar",
               icon: <SiLinkedin />,
             },
             {
-              label: 'GitHub',
-              url: 'https://github.com/aakash-rajbhar',
+              label: "GitHub",
+              url: "https://github.com/aakash-rajbhar",
               icon: <SiGithub />,
             },
             {
-              label: 'X',
-              url: 'https://x.com/aakashrajbhar25',
+              label: "X",
+              url: "https://x.com/aakashrajbhar25",
               icon: <SiX />,
             },
           ].map(({ label, url, icon }) => (

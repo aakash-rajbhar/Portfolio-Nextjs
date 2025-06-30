@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { Menu, X } from 'lucide-react';
-import React, { useState } from 'react';
-import Image from 'next/image';
+import { Menu, X } from "lucide-react";
+import React, { useState } from "react";
+import Image from "next/image";
 
 const SmallNav = ({ activeSection, setActiveSection }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'miscellaneous', label: 'Miscellaneous' },
-    { id: 'contact', label: 'Contact' },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "miscellaneous", label: "Miscellaneous" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -21,7 +21,7 @@ const SmallNav = ({ activeSection, setActiveSection }) => {
       <div className="flex items-center gap-3">
         <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-700">
           <Image
-            src="/images/profile-pic.png"
+            src="/images/profile-pic.webp"
             alt="Profile"
             width={48}
             height={48}
@@ -29,7 +29,7 @@ const SmallNav = ({ activeSection, setActiveSection }) => {
           />
         </div>
         <div>
-          <h1 className="text-lg font-semibold">Aakash Rajbhar</h1>
+          <h2 className="text-lg font-semibold">Aakash Rajbhar</h2>
           <p className="text-sm text-gray-400">Full-Stack Developer</p>
         </div>
       </div>
@@ -54,7 +54,7 @@ const SmallNav = ({ activeSection, setActiveSection }) => {
       {/* Sliding Mobile Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-neutral-900/30 backdrop-blur-md shadow-lg transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         } z-50`}
       >
         {/* Close Button */}
@@ -81,11 +81,11 @@ const SmallNav = ({ activeSection, setActiveSection }) => {
                   }}
                   className={`block w-full text-left p-2 rounded-md transition uppercase ${
                     activeSection === item.id
-                      ? 'text-white font-medium bg-neutral-800'
-                      : 'hover:text-gray-300 hover:bg-neutral-800'
+                      ? "text-white font-medium bg-neutral-800"
+                      : "hover:text-gray-300 hover:bg-neutral-800"
                   }`}
                   aria-label={`Go to ${item.label} section`}
-                  aria-current={activeSection === item.id ? 'page' : undefined}
+                  aria-current={activeSection === item.id ? "page" : undefined}
                 >
                   {item.label}
                 </button>

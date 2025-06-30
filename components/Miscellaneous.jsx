@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const MiscellaneousSection = () => {
   return (
@@ -83,12 +83,12 @@ const MiscellaneousSection = () => {
               <path
                 d="M32.5 33.5002C47.5 10 100 14.5 119.5 38.5003C139.54 63.1658 122 146.5 56 107C76 79.5003 126.57 119.743 121.5 156.5C111.5 229 29.5 203 5 169"
                 stroke="#F5F5F5"
-                stroke-width="12"
+                strokeWidth="12"
               />
               <path
                 d="M109.099 111.231H172.033V201V7L35 9.99229L223 7.00004"
                 stroke="#F5F5F5"
-                stroke-width="12"
+                strokeWidth="12"
               />
             </svg>
             Hindi | Native

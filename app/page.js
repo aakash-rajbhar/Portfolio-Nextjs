@@ -1,30 +1,34 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import Sidebar from '@/components/Sidebar';
-import AboutSection from '@/components/About';
-import SkillsSection from '@/components/Skills';
-import ProjectsSection from '@/components/Projects';
-import ContactSection from '@/components/Contact';
-import SmallNav from '@/components/SmallNav';
-import MiscellaneousSection from '@/components/Miscellaneous';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import Sidebar from "@/components/Sidebar";
+import AboutSection from "@/components/About";
+import SkillsSection from "@/components/Skills";
+import ProjectsSection from "@/components/Projects";
+import ContactSection from "@/components/Contact";
+import SmallNav from "@/components/SmallNav";
+import MiscellaneousSection from "@/components/Miscellaneous";
+
+export function reportWebVitals(metric) {
+  console.log(metric);
+}
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection, setActiveSection] = useState("about");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const renderActiveSection = () => {
     switch (activeSection) {
-      case 'about':
+      case "about":
         return <AboutSection />;
-      case 'skills':
+      case "skills":
         return <SkillsSection />;
-      case 'projects':
+      case "projects":
         return <ProjectsSection />;
-      case 'miscellaneous':
+      case "miscellaneous":
         return <MiscellaneousSection />;
-      case 'contact':
+      case "contact":
         return <ContactSection />;
       default:
         return <AboutSection />;

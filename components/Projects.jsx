@@ -1,43 +1,43 @@
-import { ArrowUpRight, ExternalLink, Github } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'Price Lytic: Price Tracker App',
+      title: "Price Lytic: Price Tracker App",
       description:
-        'A price tracker app that allows users to track the price of products on e-commerce websites. Built using Next JS, Tailwind CSS, and BrightData.',
-      technologies: ['Next JS', 'Tailwind Css', 'BrightData'],
-      image: '/images/price-tracker.png',
-      githubUrl: '#',
-      liveUrl: 'https://price-lytic.vercel.app/',
+        "A price tracker app that allows users to track the price of products on e-commerce websites. Built using Next JS, Tailwind CSS, and BrightData.",
+      technologies: ["Next JS", "Tailwind Css", "BrightData"],
+      image: "/images/price-tracker.webp",
+      githubUrl: "#",
+      liveUrl: "https://price-lytic.vercel.app/",
     },
     {
-      title: 'Storely - Cloud Storage App',
+      title: "Storely - Cloud Storage App",
       description:
-        'A cloud storage app that allows users to upload, download, and manage files. Built using Next JS, Tailwind CSS, and Appwrite.',
-      technologies: ['Next JS', 'Tailwind Css', 'Appwrite'],
-      image: '/images/project5.png',
-      githubUrl: '#',
-      liveUrl: 'https://storely-web.vercel.app/',
+        "A cloud storage app that allows users to upload, download, and manage files. Built using Next JS, Tailwind CSS, and Appwrite.",
+      technologies: ["Next JS", "Tailwind Css", "Appwrite"],
+      image: "/images/project5.webp",
+      githubUrl: "#",
+      liveUrl: "https://storely-web.vercel.app/",
     },
     {
-      title: 'Online Code Editor (IDE) ',
+      title: "Online Code Editor (IDE) ",
       description:
-        'A fully functional code editor with a live preview, built using React, Tailwind CSS, and Monaco Editor.',
-      technologies: ['React', 'Tailwind Css', 'Monaco Editor', 'Chakra UI'],
-      image: '/images/project2.png',
-      githubUrl: '#',
-      liveUrl: 'https://my-online-code-editor.vercel.app/',
+        "A fully functional code editor with a live preview, built using React, Tailwind CSS, and Monaco Editor.",
+      technologies: ["React", "Tailwind Css", "Monaco Editor", "Chakra UI"],
+      image: "/images/project2.webp",
+      githubUrl: "#",
+      liveUrl: "https://my-online-code-editor.vercel.app/",
     },
     {
-      title: 'Recipe Website - YumBites',
+      title: "Recipe Website - YumBites",
       description:
-        'A recipe website with search, and filtering features, built using React.js and Tailwind CSS.',
-      technologies: ['React', 'Tailwind Css'],
-      image: '/images/project1.png',
-      githubUrl: '#',
-      liveUrl: 'https://aakash-rajbhar.github.io/Recipe-Website/',
+        "A recipe website with search, and filtering features, built using React.js and Tailwind CSS.",
+      technologies: ["React", "Tailwind Css"],
+      image: "/images/project1.webp",
+      githubUrl: "#",
+      liveUrl: "https://aakash-rajbhar.github.io/Recipe-Website/",
     },
   ];
 

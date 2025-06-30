@@ -1,5 +1,5 @@
-import { FcGraduationCap } from 'react-icons/fc';
-import { FaSchool } from 'react-icons/fa';
+import { FcGraduationCap } from "react-icons/fc";
+import { FaSchool } from "react-icons/fa";
 
 const AboutSection = () => (
   <section id="about" className="mb-12 md:mb-0">
@@ -49,7 +49,7 @@ const AboutSection = () => (
 
     <div className="mt-8 mb-20 sm:mb-0 flex space-x-4">
       <a
-        href="/resume.pdf"
+        href="/Aakash-Resume.pdf"
         download="resume.pdf"
         className="bg-white text-black px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition"
       >

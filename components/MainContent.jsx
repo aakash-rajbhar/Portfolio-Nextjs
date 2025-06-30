@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowUpRight, Github, ExternalLink } from 'lucide-react';
+import React from "react";
+import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -13,7 +13,7 @@ const AboutSection = () => {
           expertise with an eye for detail.
         </p>
         <p className="text-gray-300 leading-relaxed">
-          Currently working as a Senior Frontend Developer at{' '}
+          Currently working as a Senior Frontend Developer at{" "}
           <span className="text-white font-medium">TechVision</span>, where I
           lead development on our flagship product serving over 100,000 monthly
           users.
@@ -46,30 +46,30 @@ const AboutSection = () => {
 const SkillsSection = () => {
   const skillCategories = [
     {
-      category: 'Frontend',
+      category: "Frontend",
       skills: [
-        'React',
-        'Vue.js',
-        'Next.js',
-        'Tailwind CSS',
-        'JavaScript/TypeScript',
-        'HTML/CSS',
+        "React",
+        "Vue.js",
+        "Next.js",
+        "Tailwind CSS",
+        "JavaScript/TypeScript",
+        "HTML/CSS",
       ],
     },
     {
-      category: 'Backend',
+      category: "Backend",
       skills: [
-        'Node.js',
-        'Express',
-        'Python',
-        'Django',
-        'REST APIs',
-        'GraphQL',
+        "Node.js",
+        "Express",
+        "Python",
+        "Django",
+        "REST APIs",
+        "GraphQL",
       ],
     },
     {
-      category: 'Tools & Others',
-      skills: ['Git/GitHub', 'Docker', 'AWS', 'CI/CD', 'Figma', 'Unity'],
+      category: "Tools & Others",
+      skills: ["Git/GitHub", "Docker", "AWS", "CI/CD", "Figma", "Unity"],
     },
   ];
 
@@ -101,31 +101,31 @@ const SkillsSection = () => {
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'StreamVault',
+      title: "StreamVault",
       description:
-        'A video content management platform with integrated analytics and monetization tools for creators.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
-      image: '/api/placeholder/500/300',
-      githubUrl: '#',
-      liveUrl: '#',
+        "A video content management platform with integrated analytics and monetization tools for creators.",
+      technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
+      image: "/api/placeholder/500/300",
+      githubUrl: "#",
+      liveUrl: "#",
     },
     {
-      title: 'Hyperapta RPG',
+      title: "Hyperapta RPG",
       description:
-        'An indie role-playing game featuring procedurally generated worlds and a unique combat system.',
-      technologies: ['Unity', 'C#', 'Blender', 'FMOD'],
-      image: '/api/placeholder/500/300',
-      githubUrl: '#',
-      liveUrl: '#',
+        "An indie role-playing game featuring procedurally generated worlds and a unique combat system.",
+      technologies: ["Unity", "C#", "Blender", "FMOD"],
+      image: "/api/placeholder/500/300",
+      githubUrl: "#",
+      liveUrl: "#",
     },
     {
-      title: 'DevNotes',
+      title: "DevNotes",
       description:
-        'An open-source note-taking app specifically designed for developers with code syntax highlighting and GitHub integration.',
-      technologies: ['Vue.js', 'Firebase', 'Electron'],
-      image: '/api/placeholder/500/300',
-      githubUrl: '#',
-      liveUrl: '#',
+        "An open-source note-taking app specifically designed for developers with code syntax highlighting and GitHub integration.",
+      technologies: ["Vue.js", "Firebase", "Electron"],
+      image: "/api/placeholder/500/300",
+      githubUrl: "#",
+      liveUrl: "#",
     },
   ];
 
