@@ -15,8 +15,20 @@ export function reportWebVitals(metric) {
 }
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("activeSection") || "about";
+    }
+    return "about";
+  });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Persist activeSection to localStorage
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("activeSection", activeSection);
+    }
+  }, [activeSection]);
 
   const renderActiveSection = () => {
     switch (activeSection) {

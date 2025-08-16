@@ -1,80 +1,145 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const MiscellaneousSection = () => {
   return (
-    <section id="miscellaneous" className="mb-20">
-      <h2 className="text-white text-3xl font-medium mb-6">Extras</h2>
+    <motion.section
+      id="miscellaneous"
+      className="mb-20"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
+      <motion.h2
+        className="text-white text-3xl font-medium mb-6"
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+      >
+        Extras
+      </motion.h2>
 
       {/* VS Code Theme */}
-      <div className="mb-12">
-        <h3 className="text-xl text-white font-medium mb-4">
+      <motion.div
+        className="mb-12"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+      >
+        <motion.h3 className="text-xl text-white font-medium mb-4">
           Created a VS Code Theme
-        </h3>
-        <div className="bg-neutral-800 px-4 py-8 rounded-lg flex flex-col  items-center gap-6">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Image
-              src="/images/theme-preview.webp" // Replace with actual image path
-              alt="VS Code Theme Preview"
-              title="VS Code Theme Preview"
-              width={600}
-              height={250}
-              className="w-full rounded-lg border border-neutral-700"
-              loading="eager"
-            />
-            <Image
-              src="/images/theme-extension.webp"
-              alt="VS Code Theme Extension"
-              title="VS Code Theme Extension"
-              width={600}
-              height={250}
-              className="w-full rounded-lg border border-neutral-700"
-              loading="eager"
-            />
+        </motion.h3>
+        <div className="bg-neutral-800 p-6 rounded-lg flex flex-col  items-center gap-6">
+          <div className="flex flex-wrap  gap-4">
+            {/* Theme Preview Image with Skeleton */}
+            <motion.div
+              className="relative w-full"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="absolute inset-0 animate-pulse bg-neutral-700 rounded-lg z-0" />
+              <Image
+                src="/images/theme-preview.webp"
+                alt="VS Code Theme Preview"
+                title="VS Code Theme Preview"
+                width={600}
+                height={250}
+                className="w-full rounded-lg border border-neutral-700 relative z-10"
+                loading="eager"
+                style={{ background: "transparent" }}
+              />
+            </motion.div>
+            {/* Theme Extension Image with Skeleton */}
+            <motion.div
+              className="relative w-full"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="absolute inset-0 animate-pulse bg-neutral-700 rounded-lg z-0" />
+              <Image
+                src="/images/theme-extension.webp"
+                alt="VS Code Theme Extension"
+                title="VS Code Theme Extension"
+                width={600}
+                height={250}
+                className="w-full rounded-lg border border-neutral-700 relative z-10"
+                loading="eager"
+                style={{ background: "transparent" }}
+              />
+            </motion.div>
           </div>
-          <div className="text-gray-300">
-            <p className="mb-3">
+          <motion.div
+            className="text-gray-300"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <p className="mb-6">
               I created a custom VS Code theme that enhances readability and
               aesthetics while coding. It's optimized for dark mode and supports
               multiple languages.
             </p>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=AakashRajbhar.skycode-dark" // Replace with actual link
+            <motion.a
+              href="https://marketplace.visualstudio.com/items?itemName=AakashRajbhar.skycode-dark"
               target="_blank"
               className="bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-200 transition"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
             >
               Get My Theme
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Technologies & Tools */}
-      <div className="mb-12">
-        <h3 className="text-xl text-white font-medium mb-4">Tools I Use</h3>
-        <div className="bg-neutral-800 p-4 rounded-lg grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-300">
-          <div>
-            <strong>Browser:</strong> Zen / Brave
-          </div>
-          <div>
+      <motion.div
+        className="mb-12"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+      >
+        <motion.h3
+          className="text-xl text-white font-medium mb-4"
+          whileHover={{ scale: 1.04 }}
+        >
+          Tools I Use
+        </motion.h3>
+        <div className="bg-neutral-800 p-6 rounded-lg grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-300">
+          <motion.div whileHover={{ scale: 1.05 }}>
             <strong>Editor:</strong> VS Code, IntelliJ IDEA
-          </div>
-          <div>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
             <strong>Terminal:</strong> Warp / Windows Terminal
-          </div>
-          <div>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
             <strong>Version Control:</strong> Git, GitHub
-          </div>
-          <div>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
             <strong>Productivity:</strong> Notion
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      <div>
-        <h3 className="text-xl text-white font-medium mb-4">Languages</h3>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <motion.h3
+          className="text-xl text-white font-medium mb-4"
+          whileHover={{ scale: 1.04 }}
+        >
+          Languages
+        </motion.h3>
         <div className="flex gap-4">
-          <div className="flex gap-1 items-center px-4 py-2 bg-neutral-700 text-neutral-50 rounded-md text-sm tracking-wide">
+          <motion.div
+            className="flex gap-1 items-center px-4 py-2 bg-neutral-700 text-neutral-50 rounded-md text-sm tracking-wide"
+            whileHover={{ scale: 1.07 }}
+          >
             <svg
               width="20"
               height="20"
@@ -94,8 +159,11 @@ const MiscellaneousSection = () => {
               />
             </svg>
             Hindi | Native
-          </div>
-          <div className="flex gap-1 items-center px-4 py-2 bg-neutral-700 text-neutral-50 rounded-md text-sm tracking-wide">
+          </motion.div>
+          <motion.div
+            className="flex gap-1 items-center px-4 py-2 bg-neutral-700 text-neutral-50 rounded-md text-sm tracking-wide"
+            whileHover={{ scale: 1.07 }}
+          >
             <svg
               width="20"
               height="20"
@@ -109,10 +177,10 @@ const MiscellaneousSection = () => {
               />
             </svg>
             English | Professional
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 
