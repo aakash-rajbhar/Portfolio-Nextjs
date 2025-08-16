@@ -47,132 +47,120 @@ const AboutSection = () => (
       <motion.h3 className="text-white text-2xl font-medium mb-4">
         Experience
       </motion.h3>
-      <div className="relative flex">
-        {/* Timeline with shooting star */}
-        <div className="relative flex flex-col items-center mr-6 min-h-[200px]">
-          {/* Timeline line */}
-          <motion.div
-            className="w-1 bg-gradient-to-b from-cyan-500 to-transparent flex-1"
-            style={{ minHeight: "200px" }}
-            initial={{ height: 0 }}
-            whileInView={{ height: "200px" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-          />
-          {/* Breakpoint for Experience Card 1 */}
-          <div className="absolute left-1/2 -translate-x-1/2 -top-1 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_8px_4px_rgba(34,211,238,0.5)] border-2 border-white z-30" />
-          {/* Breakpoint for Experience Card 2 */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-[52%] w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_8px_4px_rgba(34,211,238,0.5)] border-2 border-white z-30" />
-          {/* Shooting star */}
-          {/* <motion.div
-            className="absolute -left-[2.5px]  -top-1 w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_6px_2px_rgba(34,211,238,0.6)] z-20"
-            // animate={{ y: [200, 0], opacity: 1 }}
-            // transition={{
-            //   duration: 2,
-            //   ease: "easeInOut",
-            //   repeat: Infinity,
-            //   repeatType: "loop",
-            // }}
-            style={{ pointerEvents: "none" }}
-          /> */}
-        </div>
-        <div className="flex flex-col gap-6 flex-1">
-          {/* Experience Card 1 */}
-          <motion.div
-            className="bg-neutral-800 p-4 rounded-lg shadow-md flex-1"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-              <h4 className="text-white text-lg font-semibold">
-                Web Developer Intern{" "}
-                <span className="text-indigo-400">| Razorpod</span>
-              </h4>
-              <span className="text-gray-400 text-sm mt-1 sm:mt-0">
-                On-site, Gurugram | July 2025 – Present
-              </span>
+      {/* Experience Data Array */}
+      {(() => {
+        const experiences = [
+          {
+            title: "Web Developer Intern",
+            company: "Razorpod",
+            location: "On-site, Gurugram",
+            date: "July 2025 – Present",
+            points: [
+              "Enhanced overall website performance score by 30% through code refactoring, image optimization, and industry best practices.",
+              "Developed and maintained responsive web pages using Next.js, ensuring cross-device compatibility and improved accessibility.",
+              "Designed and tested cross-client HTML email templates, boosting engagement for marketing campaigns.",
+              "Integrated Strapi CMS to enable dynamic content management, reducing manual updates and improving content delivery efficiency.",
+            ],
+          },
+          {
+            title: "MERN Stack Developer Intern",
+            company: "Grid R&D",
+            location: "Remote",
+            date: "June 2025 – Present",
+            points: [
+              "Built and deployed scalable web pages using React.js, ensuring modular and reusable code structures.",
+              "Improved UI/UX design, leading to a more intuitive user experience and smoother navigation.",
+              "Resolved critical bugs and implemented new features, improving overall application stability and functionality.",
+              "Developed and integrated RESTful APIs, streamlining backend-frontend communication and reducing data fetch time.",
+            ],
+          },
+        ];
+
+        // Timeline height and star animation
+        const timelineHeight = 200 + (experiences.length - 2) * 100;
+        // Calculate breakpoints as a percentage of the timeline
+        const breakpoints = experiences.map((_, i) =>
+          i === 0
+            ? 0
+            : i === experiences.length - 1
+            ? 100
+            : (i / (experiences.length - 1)) * 100
+        );
+
+        return (
+          <div className="relative flex">
+            {/* Timeline with shooting star */}
+            <div
+              className="relative flex flex-col items-center mr-6"
+              style={{ minHeight: timelineHeight }}
+            >
+              {/* Timeline line */}
+              <motion.div
+                className="w-1 bg-gradient-to-b from-cyan-500 to-transparent flex-1"
+                style={{ minHeight: timelineHeight }}
+                initial={{ height: 0 }}
+                whileInView={{ height: timelineHeight }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+              />
+              {/* Dynamic Breakpoints */}
+              {breakpoints.map((percent, idx) => (
+                <div
+                  key={idx}
+                  className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_8px_4px_rgba(34,211,238,0.5)] border-2 border-white z-30"
+                  style={{
+                    top: `calc(${percent}%)`,
+                    transform: "translate(-50%, -50%)",
+                  }}
+                />
+              ))}
+              {/* Shooting star */}
+              <motion.div
+                className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_6px_2px_rgba(34,211,238,0.6)] z-20"
+                animate={{ top: ["100%", "0%"] }}
+                transition={{
+                  duration: 2.5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                style={{ pointerEvents: "none" }}
+              />
             </div>
-            <ul className="space-y-1">
-              <li className="flex items-start gap-2 text-gray-300">
-                <span className="text-cyan-400 mt-1">&#10003;</span>
-                <span>
-                  Enhanced overall website performance score by 30% through code
-                  refactoring, image optimization, and industry best practices.
-                </span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-300">
-                <span className="text-cyan-400 mt-1">&#10003;</span>
-                <span>
-                  Developed and maintained responsive web pages using Next.js,
-                  ensuring cross-device compatibility and improved
-                  accessibility.
-                </span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-300">
-                <span className="text-cyan-400 mt-1">&#10003;</span>
-                <span>
-                  Designed and tested cross-client HTML email templates,
-                  boosting engagement for marketing campaigns.
-                </span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-300">
-                <span className="text-cyan-400 mt-1">&#10003;</span>
-                <span>
-                  Integrated Strapi CMS to enable dynamic content management,
-                  reducing manual updates and improving content delivery
-                  efficiency.
-                </span>
-              </li>
-            </ul>
-          </motion.div>
-          {/* Experience Card 2 */}
-          <motion.div
-            className="bg-neutral-800 p-4 rounded-lg shadow-md flex-1"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0, delay: 0.8 }}
-          >
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-              <h4 className="text-white text-lg font-semibold">
-                MERN Stack Developer Intern{" "}
-                <span className="text-indigo-400">| Grid R&amp;D</span>
-              </h4>
-              <span className="text-gray-400 text-sm mt-1 sm:mt-0">
-                Remote | June 2025 – Present
-              </span>
+            <div className="flex flex-col gap-6 flex-1">
+              {experiences.map((exp, idx) => (
+                <motion.div
+                  key={exp.title + exp.company}
+                  className="bg-neutral-800 p-4 rounded-lg shadow-md flex-1"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                >
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                    <h4 className="text-white text-lg font-semibold">
+                      {exp.title}{" "}
+                      <span className="text-indigo-400">| {exp.company}</span>
+                    </h4>
+                    <span className="text-gray-400 text-sm mt-1 sm:mt-0">
+                      {exp.location} | {exp.date}
+                    </span>
+                  </div>
+                  <ul className="space-y-1">
+                    {exp.points.map((point, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-gray-300"
+                      >
+                        <span className="text-cyan-400 mt-1">&#10003;</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
             </div>
-            <ul className="space-y-1">
-              <li className="flex items-start gap-2 text-gray-300">
-                <span className="text-cyan-400 mt-1">&#10003;</span>
-                <span>
-                  Built and deployed scalable web pages using React.js, ensuring
-                  modular and reusable code structures.
-                </span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-300">
-                <span className="text-cyan-400 mt-1">&#10003;</span>
-                <span>
-                  Improved UI/UX design, leading to a more intuitive user
-                  experience and smoother navigation.
-                </span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-300">
-                <span className="text-cyan-400 mt-1">&#10003;</span>
-                <span>
-                  Resolved critical bugs and implemented new features, improving
-                  overall application stability and functionality.
-                </span>
-              </li>
-              <li className="flex items-start gap-2 text-gray-300">
-                <span className="text-cyan-400 mt-1">&#10003;</span>
-                <span>
-                  Developed and integrated RESTful APIs, streamlining
-                  backend-frontend communication and reducing data fetch time.
-                </span>
-              </li>
-            </ul>
-          </motion.div>
-        </div>
-      </div>
+          </div>
+        );
+      })()}
     </motion.div>
 
     {/* Education Section */}
