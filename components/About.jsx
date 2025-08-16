@@ -107,7 +107,7 @@ const AboutSection = () => (
               {breakpoints.map((percent, idx) => (
                 <div
                   key={idx}
-                  className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_8px_4px_rgba(34,211,238,0.5)] border-2 border-white z-30"
+                  className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_4px_rgba(34,211,238,0.5)] border-2 border-white z-30"
                   style={{
                     top: `calc(${percent}%)`,
                     transform: "translate(-50%, -50%)",
@@ -117,7 +117,10 @@ const AboutSection = () => (
               {/* Shooting star */}
               <motion.div
                 className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_6px_2px_rgba(34,211,238,0.6)] z-20"
-                animate={{ top: ["100%", "0%"] }}
+                animate={{
+                  top: ["100%", "0%"],
+                  opacity: [0, 1],
+                }}
                 transition={{
                   duration: 2.5,
                   ease: "easeInOut",
