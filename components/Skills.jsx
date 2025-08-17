@@ -10,10 +10,8 @@ import {
   SiExpress,
   SiPython,
   SiDjango,
-  SiGraphql,
   SiDocker,
   SiFigma,
-  SiUnity,
   SiGithub,
   SiGit,
   SiMongodb,
@@ -25,6 +23,7 @@ import {
 
 import { RiJavaFill, RiSeoLine } from "react-icons/ri";
 import { motion } from "framer-motion";
+import { HoverEffect } from "./ui/card-hover-effect";
 
 const skillCategories = [
   {
@@ -52,7 +51,6 @@ const skillCategories = [
       { name: "Express", icon: <SiExpress className="text-neutral-400" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
       { name: "MySQL", icon: <SiMysql className="text-blue-700" /> },
-      { name: "GraphQL", icon: <SiGraphql className="text-pink-400" /> },
       { name: "REST APIs", icon: "🔗" }, // Fallback
     ],
   },
@@ -73,13 +71,13 @@ const skillCategories = [
     skills: [
       { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
       {
-        name: "Adobe Illustrator",
-        icon: <SiAdobeillustrator className="text-orange-800" />,
-      }, // Fallback
-      {
         name: "Adobe Photoshop",
         icon: <SiAdobephotoshop className="text-blue-900" />,
       },
+      {
+        name: "Adobe Illustrator",
+        icon: <SiAdobeillustrator className="text-orange-800" />,
+      }, // Fallback
       {
         name: "Canva",
         icon: <SiCanva className="text-blue-500" />,
@@ -88,7 +86,7 @@ const skillCategories = [
   },
 
   {
-    category: "Tools & Others",
+    category: "Others",
     skills: [
       { name: "Git", icon: <SiGit className="text-orange-500" /> },
       { name: "GitHub", icon: <SiGithub className="text-white" /> },
@@ -102,14 +100,14 @@ const SkillsSection = () => {
   return (
     <motion.section
       id="skills"
-      className="mb-20"
+      className="mb-10 lg:mb-0"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <motion.h2
-        className="text-white text-4xl font-medium mb-8"
+        className="text-white text-4xl font-medium mb-2"
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -118,7 +116,9 @@ const SkillsSection = () => {
         Skills
       </motion.h2>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <HoverEffect items={skillCategories} />
+
+      {/* <div className="grid md:grid-cols-2 gap-8">
         {skillCategories.map((category, index) => (
           <motion.div
             key={index}
@@ -147,7 +147,7 @@ const SkillsSection = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </div> */}
     </motion.section>
   );
 };

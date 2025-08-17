@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { WobbleCard } from "./ui/wobble-card";
+import { Cog, GitBranch, PanelRightClose, SquareTerminal } from "lucide-react";
 
 const MiscellaneousSection = () => {
   return (
@@ -31,155 +33,181 @@ const MiscellaneousSection = () => {
         <motion.h3 className="text-xl text-white font-medium mb-4">
           Created a VS Code Theme
         </motion.h3>
-        <div className="bg-neutral-800 p-6 rounded-lg flex flex-col  items-center gap-6">
-          <div className="flex flex-wrap  gap-4">
-            {/* Theme Preview Image with Skeleton */}
-            <motion.div
-              className="relative w-full"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="absolute inset-0 animate-pulse bg-neutral-700 rounded-lg z-0" />
-              <Image
-                src="/images/theme-preview.webp"
-                alt="VS Code Theme Preview"
-                title="VS Code Theme Preview"
-                width={600}
-                height={250}
-                className="w-full rounded-lg border border-neutral-700 relative z-10"
-                loading="eager"
-                style={{ background: "transparent" }}
-              />
-            </motion.div>
-            {/* Theme Extension Image with Skeleton */}
-            <motion.div
-              className="relative w-full"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="absolute inset-0 animate-pulse bg-neutral-700 rounded-lg z-0" />
-              <Image
-                src="/images/theme-extension.webp"
-                alt="VS Code Theme Extension"
-                title="VS Code Theme Extension"
-                width={600}
-                height={250}
-                className="w-full rounded-lg border border-neutral-700 relative z-10"
-                loading="eager"
-                style={{ background: "transparent" }}
-              />
-            </motion.div>
-          </div>
-          <motion.div
-            className="text-gray-300"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            viewport={{ once: true }}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+          <WobbleCard
+            containerClassName="col-span-1 lg:col-span-2 h-full bg-cyan-800 min-h-[400px] lg:min-h-[300px]"
+            className=""
           >
-            <p className="mb-6">
-              I created a custom VS Code theme that enhances readability and
-              aesthetics while coding. It's optimized for dark mode and supports
-              multiple languages.
-            </p>
-            <motion.a
-              href="https://marketplace.visualstudio.com/items?itemName=AakashRajbhar.skycode-dark"
-              target="_blank"
-              className="bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-200 transition"
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Get My Theme
-            </motion.a>
-          </motion.div>
+            <div className="max-w-md">
+              <h2 className="text-left text-balance text-lg md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                SkyCode Dark Theme
+              </h2>
+              <p className="mt-2 text-left text-sm text-neutral-200">
+                SkyCode is a clean, modern VS Code theme for a distraction-free
+                coding experience. Optimized for dark mode, it offers
+                high-contrast colors for readability and supports many languages
+                and file types.
+              </p>
+            </div>
+            <img
+              src="/images/theme-preview.webp"
+              width={400}
+              height={400}
+              alt="SkyCode VS Code Theme Extension"
+              className="absolute -right-4 lg:-right-[5%]  -bottom-4 lg:-bottom-16 object-contain rounded-2xl"
+            />
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 min-h-[200px] bg-violet-900/80">
+            <div className="max-w-xs">
+              <h2 className="text-left text-balance text-lg md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                Why You'll Love It
+              </h2>
+              <ul className="mt-4 px-4 lg:px-0 space-y-2 text-left text-xs list-disc text-neutral-200">
+                <li>Beautiful, vibrant color palette</li>
+                <li>Enhanced syntax highlighting</li>
+                <li>Minimal, focused UI</li>
+                <li>Easy on the eyes for day and night coding</li>
+                <li>Available free on the VS Code Marketplace</li>
+              </ul>
+            </div>
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-gray-700 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+            <div className="max-w-md relative z-10">
+              <h2 className="max-w-sm md:max-w-lg text-left text-balance text-lg md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                Get SkyCode for VS Code
+              </h2>
+              <p className="mt-4  text-left text-sm/2 text-neutral-200">
+                Install SkyCode directly from the VS Code Marketplace and
+                transform your editor into a visually stunning, productive
+                workspace. Join hundreds of developers already using SkyCode to
+                boost their workflow!
+              </p>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=AakashRajbhar.skycode-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-6 px-6 py-2 bg-white text-blue-900 font-semibold rounded-lg shadow hover:bg-blue-100 transition cursor-pointer z-20 relative"
+                style={{ position: "relative", zIndex: 20 }}
+              >
+                Get SkyCode Theme
+              </a>
+            </div>
+            <img
+              src="/images/theme-extension.webp"
+              width={500}
+              height={500}
+              alt="SkyCode VS Code Theme Preview"
+              className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl pointer-events-none z-0"
+              style={{ zIndex: 0, pointerEvents: "none" }}
+            />
+          </WobbleCard>
         </div>
       </motion.div>
 
       {/* Technologies & Tools */}
-      <motion.div
+      <motion.section
         className="mb-12"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.2 }}
       >
-        <motion.h3
-          className="text-xl text-white font-medium mb-4"
-          whileHover={{ scale: 1.04 }}
-        >
+        <motion.h3 className="text-xl text-white font-medium mb-6">
           Tools I Use
         </motion.h3>
-        <div className="bg-neutral-800 p-6 rounded-lg grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-300">
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <strong>Editor:</strong> VS Code, IntelliJ IDEA
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Editor */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-neutral-700 border border-neutral-800 rounded-2xl p-6 flex flex-col items-center shadow-lg"
+          >
+            <span className="text-3xl mb-3">
+              <PanelRightClose className="w-8 h-8 text-white" />
+            </span>
+            <span className="text-lg font-semibold text-white mb-1">
+              Editor
+            </span>
+            <span className="text-gray-300 text-sm text-center">
+              VS Code, IntelliJ IDEA
+            </span>
           </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <strong>Terminal:</strong> Warp / Windows Terminal
+          {/* Terminal */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-neutral-700 border border-neutral-800 rounded-2xl p-6 flex flex-col items-center shadow-lg"
+          >
+            <span className="text-3xl mb-3">
+              <SquareTerminal className="w-8 h-8 text-white" />
+            </span>
+            <span className="text-lg font-semibold text-white mb-1">
+              Terminal
+            </span>
+            <span className="text-gray-300 text-sm text-center">
+              wsl, git bash, Windows Terminal
+            </span>
           </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <strong>Version Control:</strong> Git, GitHub
+          {/* Version Control */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-neutral-700 border border-neutral-800 rounded-2xl p-6 flex flex-col items-center shadow-lg"
+          >
+            <span className="text-3xl mb-3">
+              <GitBranch className="w-8 h-8 text-white" />
+            </span>
+            <span className="text-lg font-semibold text-white mb-1">
+              Version Control
+            </span>
+            <span className="text-gray-300 text-sm text-center">
+              Git, GitHub
+            </span>
           </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <strong>Productivity:</strong> Notion
+          {/* Productivity */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-neutral-700 border border-neutral-800 rounded-2xl p-6 flex flex-col items-center shadow-lg"
+          >
+            <span className="text-3xl mb-3">
+              <Cog className="w-8 h-8 text-white" />
+            </span>
+            <span className="text-lg font-semibold text-white mb-1">
+              Productivity
+            </span>
+            <span className="text-gray-300 text-sm text-center">Notion</span>
           </motion.div>
         </div>
-      </motion.div>
+      </motion.section>
 
-      <motion.div
+      <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <motion.h3
-          className="text-xl text-white font-medium mb-4"
-          whileHover={{ scale: 1.04 }}
-        >
+        <motion.h3 className="text-xl text-white font-medium mb-6">
           Languages
         </motion.h3>
-        <div className="flex gap-4">
-          <motion.div
-            className="flex gap-1 items-center px-4 py-2 bg-neutral-700 text-neutral-50 rounded-md text-sm tracking-wide"
-            whileHover={{ scale: 1.07 }}
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 224 209"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32.5 33.5002C47.5 10 100 14.5 119.5 38.5003C139.54 63.1658 122 146.5 56 107C76 79.5003 126.57 119.743 121.5 156.5C111.5 229 29.5 203 5 169"
-                stroke="#F5F5F5"
-                strokeWidth="12"
-              />
-              <path
-                d="M109.099 111.231H172.033V201V7L35 9.99229L223 7.00004"
-                stroke="#F5F5F5"
-                strokeWidth="12"
-              />
-            </svg>
-            Hindi | Native
-          </motion.div>
-          <motion.div
-            className="flex gap-1 items-center px-4 py-2 bg-neutral-700 text-neutral-50 rounded-md text-sm tracking-wide"
-            whileHover={{ scale: 1.07 }}
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 6 8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.84659 7.15341C2.43182 7.15341 2.0554 7.07528 1.71733 6.91903C1.37926 6.75994 1.1108 6.53125 0.911932 6.23295C0.713068 5.93182 0.613636 5.56818 0.613636 5.14205C0.613636 4.76705 0.6875 4.46307 0.835227 4.23011C0.982955 3.99432 1.1804 3.80966 1.42756 3.67614C1.67472 3.54261 1.94744 3.44318 2.24574 3.37784C2.54688 3.30966 2.84943 3.25568 3.15341 3.21591C3.55114 3.16477 3.87358 3.12642 4.12074 3.10085C4.37074 3.07244 4.55256 3.02557 4.66619 2.96023C4.78267 2.89489 4.84091 2.78125 4.84091 2.61932V2.58523C4.84091 2.16477 4.72585 1.83807 4.49574 1.60511C4.26847 1.37216 3.9233 1.25568 3.46023 1.25568C2.98011 1.25568 2.60369 1.3608 2.33097 1.57102C2.05824 1.78125 1.86648 2.00568 1.75568 2.24432L0.801136 1.90341C0.971591 1.50568 1.19886 1.19602 1.48295 0.974432C1.76989 0.75 2.08239 0.59375 2.42045 0.505682C2.76136 0.414773 3.09659 0.369318 3.42614 0.369318C3.63636 0.369318 3.87784 0.394886 4.15057 0.446022C4.42614 0.494318 4.69176 0.59517 4.94744 0.748579C5.20597 0.901989 5.42045 1.13352 5.59091 1.44318C5.76136 1.75284 5.84659 2.16761 5.84659 2.6875V7H4.84091V6.11364H4.78977C4.72159 6.25568 4.60795 6.40767 4.44886 6.5696C4.28977 6.73153 4.07813 6.86932 3.81392 6.98295C3.54972 7.09659 3.22727 7.15341 2.84659 7.15341ZM3 6.25C3.39773 6.25 3.73295 6.17188 4.00568 6.01562C4.28125 5.85938 4.48864 5.65767 4.62784 5.41051C4.76989 5.16335 4.84091 4.90341 4.84091 4.63068V3.71023C4.7983 3.76136 4.70455 3.80824 4.55966 3.85085C4.41761 3.89062 4.25284 3.92614 4.06534 3.95739C3.88068 3.9858 3.70028 4.01136 3.52415 4.03409C3.35085 4.05398 3.21023 4.07102 3.10227 4.08523C2.84091 4.11932 2.59659 4.17472 2.36932 4.25142C2.14489 4.32528 1.96307 4.4375 1.82386 4.58807C1.6875 4.7358 1.61932 4.9375 1.61932 5.19318C1.61932 5.54261 1.74858 5.80682 2.0071 5.9858C2.26847 6.16193 2.59943 6.25 3 6.25Z"
-                fill="white"
-              />
-            </svg>
-            English | Professional
-          </motion.div>
-        </div>
-      </motion.div>
+        <ul className="space-y-6 pl-2 border-l-2 border-neutral-700">
+          <li className="flex items-center gap-3 relative">
+            <span className="absolute -left-4 w-4 h-4 bg-black rounded-full border-2 border-white shadow"></span>
+            <span className="text-xl font-medium ml-2 text-neutral-100">
+              Hindi
+            </span>
+            <span className="ml-1 px-2 py-1 rounded-full bg-neutral-800 text-yellow-300 text-[10px] ">
+              Native
+            </span>
+          </li>
+          <li className="flex items-center gap-3 relative">
+            <span className="absolute -left-4 w-4 h-4 bg-black rounded-full border-2 border-white shadow"></span>
+            <span className="text-xl font-medium ml-2 text-neutral-100">
+              English
+            </span>
+            <span className="ml-1 px-2 py-1 rounded-full bg-neutral-800 text-blue-300 text-[10px] ">
+              Professional
+            </span>
+          </li>
+        </ul>
+      </motion.section>
     </motion.section>
   );
 };

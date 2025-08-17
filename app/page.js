@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <div className="bg-neutral-950 h-screen overflow-hidden">
-      <div className="max-w-5xl mx-auto flex">
+      <div className="max-w-6xl mx-auto flex">
         {/* Sidebar - Hidden on Small Screens */}
         <div className="hidden md:block w-64 text-white h-screen fixed">
           <Sidebar
@@ -65,7 +65,7 @@ const App = () => {
         </div>
 
         {/* Scrollable Main Content */}
-        <main className="flex-1 md:ml-64 text-gray-400 h-screen overflow-y-auto mt-20 md:mt-0 p-8 lg:p-16">
+        <main className="flex-1 md:ml-64 text-gray-400 h-screen overflow-y-auto mt-20 md:mt-0 px-6 py-8 lg:py-16">
           {renderActiveSection()}
         </main>
       </div>

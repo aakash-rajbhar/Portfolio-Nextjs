@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
 import Image from "next/image";
+import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 
 const SmallNav = ({ activeSection, setActiveSection }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,7 +35,7 @@ const SmallNav = ({ activeSection, setActiveSection }) => {
           whileHover={{ scale: 1.07 }}
         >
           <Image
-            src="/images/profile-pic.webp"
+            src="/images/profile.webp"
             alt="Profile"
             width={48}
             height={48}
@@ -75,7 +76,7 @@ const SmallNav = ({ activeSection, setActiveSection }) => {
 
       {/* Sliding Mobile Menu - only on small screens */}
       <motion.div
-        className="fixed top-0 right-0 h-full w-64 bg-neutral-900/30 backdrop-blur-md shadow-lg z-50 block lg:hidden"
+        className="fixed top-0 right-0 h-full w-64 rounded-tl-xl rounded-bl-xl bg-neutral-900/30 backdrop-blur-md shadow-lg z-50  lg:hidden flex flex-col"
         initial={{ x: "100%" }}
         animate={{ x: mobileMenuOpen ? 0 : "100%" }}
         transition={{
@@ -132,6 +133,58 @@ const SmallNav = ({ activeSection, setActiveSection }) => {
             ))}
           </ul>
         </nav>
+        {/* Social Links - Always Stays at Bottom */}
+        <motion.section
+          className="w-full space-y-2 p-6 mt-4 mb-2 absolute bottom-0 left-0"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          <h3 className="text-white text-sm uppercase tracking-wider mb-3">
+            Connect
+          </h3>
+          <div className="flex space-x-4">
+            {[
+              {
+                label: "LinkedIn",
+                url: "https://linkedin.com/in/aakash-rajbhar",
+                icon: <SiLinkedin />,
+              },
+              {
+                label: "GitHub",
+                url: "https://github.com/aakash-rajbhar",
+                icon: <SiGithub />,
+              },
+              {
+                label: "X",
+                url: "https://x.com/aakashrajbhar25",
+                icon: <SiX />,
+              },
+            ].map(({ label, url, icon }) => (
+              <motion.a
+                key={label}
+                href={url}
+                target="_blank"
+                title={label}
+                className="text-neutral-400 hover:text-cyan-600 transition duration-200"
+                aria-label={`${label} Profile`}
+                whileHover={{ scale: 1.13 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                {icon}
+              </motion.a>
+            ))}
+          </div>
+          <motion.a
+            href="mailto:akash.kumarajbhar@gmail.com"
+            target="_blank"
+            className="text-neutral-400 hover:text-cyan-600 transition block text-sm"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.99 }}
+          >
+            akash.kumarajbhar@gmail.com
+          </motion.a>
+        </motion.section>
       </motion.div>
     </motion.header>
   );

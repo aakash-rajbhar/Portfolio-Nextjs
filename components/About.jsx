@@ -143,7 +143,7 @@ const AboutSection = () => (
                       {exp.title}{" "}
                       <span className="text-indigo-400">| {exp.company}</span>
                     </h4>
-                    <span className="text-gray-400 text-sm mt-1 sm:mt-0">
+                    <span className="text-gray-400 text-[10px] mt-1 sm:mt-0">
                       {exp.location} | {exp.date}
                     </span>
                   </div>
@@ -174,10 +174,7 @@ const AboutSection = () => (
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.2 }}
     >
-      <motion.h3
-        className="text-white text-2xl font-medium mb-4"
-        whileHover={{ scale: 1.04 }}
-      >
+      <motion.h3 className="text-white text-2xl font-medium mb-4">
         Education
       </motion.h3>
       <div className="space-y-4">
@@ -187,7 +184,7 @@ const AboutSection = () => (
         >
           <h4 className="text-white text-lg font-semibold flex gap-2 items-center">
             <FcGraduationCap />
-            Bachelor of Technology in Information Technology
+            Bachelor of Technology in Information Technology - [9.1 CGPA]
           </h4>
           <p className="text-gray-400">
             Guru Gobind Singh Indraprastha University - Delhi, India
@@ -200,7 +197,7 @@ const AboutSection = () => (
         >
           <h4 className="text-white text-lg font-semibold flex gap-2 items-center">
             <FaSchool />
-            Higher Secondary Education [PCM]
+            Higher Secondary Education [PCM] - [85%]
           </h4>
           <p className="text-gray-400">
             Govt. Boys Senior Secondary School No.2 Kalkaji - Delhi, India
@@ -220,7 +217,7 @@ const AboutSection = () => (
     >
       <motion.a
         href="/Aakash_Resume.pdf"
-        download="resume.pdf"
+        download="aakash_resume.pdf"
         className="bg-white text-black px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition"
         whileHover={{ scale: 1.07 }}
         whileTap={{ scale: 0.97 }}

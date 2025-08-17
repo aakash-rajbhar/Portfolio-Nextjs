@@ -111,7 +111,7 @@ const Sidebar = ({ activeSection, setActiveSection, closeMenu }) => {
               href={url}
               target="_blank"
               title={label}
-              className="text-neutral-400 hover:text-indigo-700 transition duration-200"
+              className="text-neutral-400 hover:text-cyan-600 transition duration-200"
               aria-label={`${label} Profile`}
               whileHover={{ scale: 1.13 }}
               whileTap={{ scale: 0.97 }}
@@ -123,7 +123,7 @@ const Sidebar = ({ activeSection, setActiveSection, closeMenu }) => {
         <motion.a
           href="mailto:akash.kumarajbhar@gmail.com"
           target="_blank"
-          className="text-neutral-400 hover:text-white transition block text-sm"
+          className="text-neutral-400 hover:text-cyan-600 transition block text-sm"
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
         >
